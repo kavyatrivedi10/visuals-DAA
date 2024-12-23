@@ -2,7 +2,7 @@ async function insertion(){
     console.log('In insertion()');
     const ele = document.querySelectorAll(".bar");
     // color
-    ele[0].style.background = 'green';
+    ele[0].style.background = 'yellow';
     for(let i = 1; i < ele.length; i++){
         console.log('In ith loop');
         let j = i - 1;
@@ -17,17 +17,23 @@ async function insertion(){
             // color
             ele[j].style.background = 'blue';
             ele[j + 1].style.height = ele[j].style.height;
+            ele[j].style.height = key;
+            ele[j + 1].style.background = 'yellow'
             j--;
 
             await waitforme(delay);
 
             // color
-            for(let k = i; k >= 0; k--){
-                ele[k].style.background = 'green';
-            }
+            // for(let k = i; k >= 0; k--){
+            //     ele[k].style.background = 'green';
+            // }
         }
-        ele[j + 1].style.height = key;
+        ele[j + 1].style.background = 'yellow';
+        // ele[j + 1].style.height = key;
         // color
+        // ele[i].style.background = 'green';
+    }
+    for(let i = 0; i < ele.length; i++) {
         ele[i].style.background = 'green';
     }
 }
